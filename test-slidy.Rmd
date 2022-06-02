@@ -1,0 +1,74 @@
+---
+title: "Test Slidy"
+author: "Tao Xiang"
+date: '2022-06-02'
+output:
+  slidy_presentation:
+    duration: 45
+    footer: Copyright (c) 2022, Clinchoice
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## R Markdown
+
+This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+## Slide with Bullets
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+## Text format
+
+- Plain text
+- End a line with two spaces to start a new paragraph.
+- *italics* and _italics_
+- **bold** and __bold__
+- <span style="color:red">color</span>
+- superscript^2^
+- ~~strikethrough~~
+- [link](www.rstudio.com)
+
+- # Header 1
+- ## Header 2
+- ### Header 3
+- #### Header 4
+- ##### Header 5
+- ###### Header 6
+
+## Slide with R Output
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Slide with Plot
+
+```{r pressure}
+plot(pressure)
+```
+
+## Student-t distribution {data-background=slide1.png data-background-size=cover}
+
+```{r student-t, echo=TRUE}
+x <- seq(-5, 5, by = 0.01)
+y <- dt(x, df = Inf)
+y2 <- dt(x, df = 10)
+y3 <- dt(x, df = 5)
+y4 <- dt(x, df = 3)
+y5 <- dt(x, df = 1)
+plot(y, type = "l", main = "t-distribution",col = "Red")
+lines(y2,col = "Orange",)
+lines(y3,col = "Green")
+lines(y4,col = "Blue")
+lines(y5,col = "Purple")
+legend(800, 0.4, legend=c("df = Inf", "df = 10", "df = 5","df = 3", "df = 1"),
+       col=c("Red", "Orange", "Green", "Blue", "Purple"), lty=1)
+```
+

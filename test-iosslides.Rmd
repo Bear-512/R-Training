@@ -1,0 +1,99 @@
+---
+title: "Test slides"
+author: "TX"
+date: '2022-05-26'
+output:
+  ioslides_presentation:
+    widescreen: yes
+    logo: logo.png
+---
+
+<script>
+
+    .gdbar img {
+        width: 300px !important;
+        height: 150px !important;
+        margin: 8px 8px;
+    }
+
+    .gdbar {
+        width: 400px !important;
+        height: 170px !important;
+    }
+
+    slides > slide:not(.nobackground):before {
+        width: 150px;
+        height: 75px;
+        background-size: 150px 75px;
+    }
+
+</script>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## R Markdown {data-background=slide1.png data-background-size=cover}
+
+This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+## Slide with Bullets {data-background=outline.png data-background-size=cover}
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+## Center the content {data-background=slide1.png data-background-size=cover}
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Test slides {data-background=slide1.png data-background-size=cover}
+
+<div class="red2">
+- Bullet 1
+- Bullet 2
+- Bullet 3
+</div>
+
+<div class="blue3">
+- Bullet 1
+- Bullet 2
+- Bullet 3
+</div>
+
+## Slide with Plot {data-background=slide1.png data-background-size=cover}
+
+```{r pressure, echo = TRUE}
+### <b>
+x <- 10
+y <- x * 2
+### </b>
+plot(pressure)
+```
+
+## Student-t distribution {data-background=slide1.png data-background-size=cover}
+
+```{r student-t, echo=TRUE}
+x <- seq(-5, 5, by = 0.01)
+y <- dt(x, df = Inf)
+y2 <- dt(x, df = 10)
+y3 <- dt(x, df = 5)
+y4 <- dt(x, df = 3)
+y5 <- dt(x, df = 1)
+plot(y, type = "l", main = "t-distribution",col = "Red")
+lines(y2,col = "Orange",)
+lines(y3,col = "Green")
+lines(y4,col = "Blue")
+lines(y5,col = "Purple")
+legend(800, 0.4, legend=c("df = Inf", "df = 10", "df = 5","df = 3", "df = 1"),
+       col=c("Red", "Orange", "Green", "Blue", "Purple"), lty=1)
+```
+
+## {data-background=endslide.png}
+
+
+
